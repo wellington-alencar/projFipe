@@ -52,7 +52,7 @@ public class Controller {
                     .filter(m-> m.nome().toLowerCase().contains(nameVehicle.toLowerCase()))
                     .collect(Collectors.toList());
             System.out.println("Modelos filtrados");
-
+            filteredModels.forEach(System.out::println);
             System.out.println("Digite o codigo do modelo: ");
             var cod = sc.next();
             json = consumerAPI.getData(API+type+"/marcas/"+codigo+"/modelos/"+cod+"/anos");
